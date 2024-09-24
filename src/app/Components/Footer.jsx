@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="mt-3 grid space-y-3 text-sm">
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">About us</a></p>
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Blog</a></p>
-        <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Careers</a> <span className="inline text-blue-600">— We're hiring</span></p>
+        <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Careers</a> <span className="inline text-blue-600">— We&apos;re hiring</span></p>
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Customers</a></p>
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Newsroom</a></p>
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Sitemap</a></p>
@@ -48,7 +48,7 @@ const Footer = () => {
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Community</a></p>
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Help & Support</a></p>
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">eBook</a></p>
-        <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">What's New</a></p>
+        <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">What&apos;s New</a></p>
         <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" href="#">Status</a></p>
       </div>
     </div>
@@ -79,10 +79,11 @@ const Footer = () => {
       <div className="flex flex-wrap items-center gap-3">
 
         <div className="hs-dropdown [--placement:top-left] relative inline-flex">
+
           <button id="hs-footer-language-dropdown" type="button" className="hs-dropdown-toggle py-2 px-3 inline-flex items-center gap-x-2 text-sm rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
             
             English (US)
-            <svg className="hs-dropdown-open:rotate-180 shrink-0 size-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+            
           </button>
 
           <div className="hs-dropdown-menu w-40 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-10 bg-white shadow-md rounded-lg p-2" role="menu" aria-orientation="vertical" aria-labelledby="hs-footer-language-dropdown">
