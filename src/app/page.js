@@ -1,6 +1,7 @@
 import ActionnDrama from "./Components/ActionnDrama";
 import Banner from "./Components/Banner";
 import ComedyMovies from "./Components/ComedyMovies";
+import Footer from "./Components/Footer";
 import HeroSection from "./Components/HeroSection";
 import MovieSeason from "./Components/MovieSerreis";
 
@@ -29,6 +30,7 @@ export default function Home() {
       </div>
       
       <MovieSeason/>
+      <Footer/>
     </div>
   );
 }

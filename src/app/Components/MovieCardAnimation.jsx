@@ -27,7 +27,7 @@ function Scene({ children, ...props }) {
       <Cards category="Thiller" from={Math.PI / 4} len={Math.PI / 2} position={[0, 0.4, 0]} onPointerOver={hover} onPointerOut={hover} />
       <Cards category="Horror" from={Math.PI / 4 + Math.PI / 2} len={Math.PI / 2} onPointerOver={hover} onPointerOut={hover} />
       <Cards category="Romantic" from={Math.PI * 1.25} len={Math.PI * 2 - Math.PI * 1.25} position={[0, -0.4, 0]} onPointerOver={hover} onPointerOut={hover} />
-      <ActiveCard hovered={hovered} />
+      <LinkctiveCard hovered={hovered} />
     </group>
   )
 }
