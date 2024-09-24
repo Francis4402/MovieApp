@@ -27,7 +27,7 @@ function Scene({ children, ...props }) {
       <Cards category="Thiller" from={Math.PI / 4} len={Math.PI / 2} position={[0, 0.4, 0]} onPointerOver={hover} onPointerOut={hover} />
       <Cards category="Horror" from={Math.PI / 4 + Math.PI / 2} len={Math.PI / 2} onPointerOver={hover} onPointerOut={hover} />
       <Cards category="Romantic" from={Math.PI * 1.25} len={Math.PI * 2 - Math.PI * 1.25} position={[0, -0.4, 0]} onPointerOver={hover} onPointerOut={hover} />
-      <LinkctiveCard hovered={hovered} />
+      <ActiveCard hovered={hovered} />
     </group>
   )
 }
@@ -73,14 +73,14 @@ function Card({ url, active, hovered, ...props }) {
   })
   return (
     <group {...props}>
-      <Image ref={ref} transparent radius={0.075} url={url} scale={[1.618, 1, 1]} side={THREE.DoubleSide} />
+      <Image ref={ref} transparent radius={0.075} url={url} scale={[1.618, 1, 1]} side={THREE.DoubleSide} alt="i" />
     </group>
   )
 }
 
 function ActiveCard({ hovered, ...props }) {
   const ref = useRef()
-  const name = useMemo(() => generate({ exactly: 2 }).join(' '), [hovered])
+  const name = useMemo(() => generate({ exactly: 2 }).join(' '), [])
   useLayoutEffect(() => {
     if (ref.current && ref.current.material) {
       ref.current.material.zoom = 0.8
@@ -104,7 +104,8 @@ function ActiveCard({ hovered, ...props }) {
           radius={0.3} 
           position={[0, 1.5, 0]} 
           scale={[3.5, 1.618 * 3.5, 0.2, 1]} 
-          url={`/cards/cardimg${Math.floor(hovered % 10) + 1}.png`} 
+          url={`/cards/cardimg${Math.floor(hovered % 10) + 1}.png`}
+          alt="i"
         />
       )}
     </Billboard>
