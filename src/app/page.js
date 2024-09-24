@@ -1,3 +1,4 @@
+import Banner from "./Components/Banner";
 import HeroSection from "./Components/HeroSection";
 import MovieCardAnimation from "./Components/MovieCardAnimation";
 import PopularMovieSection from "./Components/PopularMovieSection";
@@ -12,7 +13,8 @@ export default function Home() {
           <PopularMovieSection/>
         </div>
       </div>
-      <MovieCardAnimation />
+      <MovieCardAnimation/>
+      <Banner/>
     </div>
   );
 }
