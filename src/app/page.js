@@ -1,7 +1,11 @@
+import ActionnDrama from "./Components/ActionnDrama";
 import Banner from "./Components/Banner";
+import ComedyMovies from "./Components/ComedyMovies";
 import HeroSection from "./Components/HeroSection";
-import MovieCardAnimation from "./Components/MovieCardAnimation";
+import MovieSeason from "./Components/MovieSerreis";
+
 import PopularMovieSection from "./Components/PopularMovieSection";
+import RomanticMovies from "./Components/RomanticMovies";
 
 
 export default function Home() {
@@ -11,10 +15,20 @@ export default function Home() {
       <div className="flex justify-center">
         <div className="container md:px-0 px-5">
           <PopularMovieSection/>
+          <RomanticMovies/>
         </div>
       </div>
-      <MovieCardAnimation/>
+
       <Banner/>
+
+      <div className="flex justify-center">
+        <div className="container md:px-0 px-5">
+          <ActionnDrama/>
+          <ComedyMovies/>
+        </div>
+      </div>
+      
+      <MovieSeason/>
     </div>
   );
 }

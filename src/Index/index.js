@@ -1,4 +1,4 @@
-export const cardImages = [
+export const cardImages1 = [
     {
         src: "/Screenshot (19).png",
         year: "2017",
@@ -134,5 +134,71 @@ export const heroImages = [
     },
     {
         src: "/Screenshot (18).png",
+    },
+]
+
+export const CardImages = [
+    {
+        src: "/cards/cardimg1.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
+    },
+    {
+        src: "/cards/cardimg2.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
+    },
+    {
+        src: "/cards/cardimg3.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
+    },
+    {
+        src: "/cards/cardimg4.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
+    },
+    {
+        src: "/cards/cardimg5.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
+    },
+    {
+        src: "/cards/cardimg6.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
+    },
+    {
+        src: "/cards/cardimg7.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
+    },
+    {
+        src: "/cards/cardimg8.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
+    },
+    {
+        src: "/cards/cardimg9.png",
+        year: "2019",
+        type: "Action",
+        rating: "8.5",
+        title: "Alien",
     },
 ]

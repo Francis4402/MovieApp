@@ -15,12 +15,9 @@ const HeroSection = () => {
               <h1 className="text-white md:text-6xl text-3xl font-bold">American Made</h1>
               <p className="text-white md:text-2xl text-lg">2017 | Comedy | 1hr 55 mins</p>
               
-              <div className="flex md:flex-row flex-col mx-auto gap-5 md:w-full w-40">
-                <button className="bg-blue-400 text-white px-6 py-2 rounded-md">Watch Now</button>
-                <button className="border-2 items-center text-white px-6 py-2 rounded-md flex gap-2">
-                  <FaPlus size={12} />
-                  Playlist
-                </button>
+              <div className='flex md:flex-row flex-col gap-5'>
+                  <button className='bg-blue-700 hover:bg-blue-800 duration-200 text-white px-5 py-3 rounded-md justify-center'>Watch Now</button>
+                  <button className='bg-transparent hover:bg-gray-500 duration-200 justify-center border border-white flex items-center gap-2 text-white px-5 py-3 rounded-md'><FaPlus/> Playlist</button>
               </div>
             </div>
 

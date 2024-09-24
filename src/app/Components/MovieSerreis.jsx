@@ -3,7 +3,7 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 import { FaPlus } from 'react-icons/fa'
 import Link from "next/link";
 
-const Banner = () => {
+const MovieSeason = () => {
   return (
     <section className="bg-center bg-no-repeat bg-[url('/Gerdian.png')] bg-gray-700 bg-blend-overlay mb-20">
       <div className="px-4 mx-auto max-w-4xl py-40">
@@ -31,4 +31,4 @@ const Banner = () => {
   )
 }
 
-export default Banner
+export default MovieSeason
