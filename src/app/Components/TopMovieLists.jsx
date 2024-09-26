@@ -34,7 +34,7 @@ const TopMovieLists = () => {
             
             <hr className='mb-5 border-gray-700' />
 
-            <div className='flex gap-10'>
+            <div className='flex md:flex-row flex-col gap-10'>
                 <Image src={'/cards/cardimg6.png'} alt="i" width={150} height={150}/>
 
                 <div className='flex flex-col gap-5'>
@@ -44,14 +44,14 @@ const TopMovieLists = () => {
                     </div>
                     <p className='text-gray-400'>Aliens Invated Our Planed People all the humans fighting for their pitiful lifes</p>
                     
-                    <div className='flex gap-5'>
+                    <div className='flex sm:flex-row flex-col gap-5'>
                         <button className='bg-blue-400 duration-200 hover:bg-blue-600 text-white px-5 py-2 rounded-md'>Watch Now</button>
-                        <button className='flex items-center hover:bg-white hover:text-black px-5 py-2 rounded-md duration-200 gap-1 text-xs text-white font-semibold'><FaPlus size={9} />PLAYLIST</button>
+                        <button className='flex items-center justify-center hover:bg-white hover:text-black px-5 py-2 rounded-md duration-200 gap-1 text-xs text-white font-semibold'><FaPlus size={9} />PLAYLIST</button>
                     </div>
                 </div>
             </div>
 
-            <div className='grid grid-cols-2'>
+            <div className='grid md:grid-cols-2'>
                 {
                     CardImages.slice(0, 8).map(items => <div key={items.src} className=' border-gray-700'>
                         <div className='flex gap-5'>

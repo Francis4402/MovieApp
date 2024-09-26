@@ -11,3 +11,15 @@ body {
   background: var(--background);
   font-family: 'Poppins', sans-serif;
 }
+
+
+
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+
+
+.overflow-x-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

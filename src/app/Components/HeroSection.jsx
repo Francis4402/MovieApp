@@ -1,42 +1,102 @@
-import { heroImages } from "@/Index"
-import Image from "next/image"
-import { FaPlus } from "react-icons/fa"
+"use client";
 
+import { useEffect, useRef, useState } from "react";
+
+import Image from "next/image";
+import { gsap } from "gsap";
+import { Draggable } from "gsap/Draggable";
+import { cardImages1 } from "@/Index";
+import { FaPlayCircle } from "react-icons/fa";
+
+gsap.registerPlugin(Draggable);
 
 const HeroSection = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % cardImages1.length);
+    }, 4000);
+
+    Draggable.create(carouselRef.current, {
+      type: "x",
+      edgeResistance: 0.65,
+      bounds: carouselRef.current.parentElement,
+      inertia: true,
+    });
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
-    <div className="bg-[url('/PosterBanner.jpeg')] bg-cover bg-center bg-no-repeat h-[800px] overflow-hidden relative">
-      <div className="bg-black opacity-30 absolute w-full h-full z-10"></div>
-      <div className="flex justify-center items-center h-full">
-        <div className="container md:px-0 px-5">
+    <div className="bg-cover bg-center bg-no-repeat h-[800px] overflow-hidden relative">
+      {/* Main hero image */}
+      <div className="absolute inset-0 z-5">
+        <Image
+          src={cardImages1[currentImageIndex].src}
+          alt={cardImages1[currentImageIndex].title}
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+      </div>
 
-          <div className="flex lg:flex-row flex-col gap-20 justify-between items-center">
-            <div className="flex flex-col gap-5 z-20">
-              <h1 className="text-white md:text-6xl text-3xl font-bold">American Made</h1>
-              <p className="text-white md:text-2xl text-lg">2017 | Comedy | 1hr 55 mins</p>
-              
-              <div className='flex md:flex-row flex-col gap-5'>
-                  <button className='bg-blue-700 hover:bg-blue-800 duration-200 text-white px-5 py-3 rounded-md justify-center'>Watch Now</button>
-                  <button className='bg-transparent hover:bg-gray-500 duration-200 justify-center border border-white flex items-center gap-2 text-white px-5 py-3 rounded-md'><FaPlus/> Playlist</button>
-              </div>
+      {/* Content overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 z-10">
+        <div className="container lg:max-w-7xl mx-auto h-full flex items-center">
+          <div className="text-white max-w-2xl">
+            <h1 className="text-5xl font-bold mb-4">{cardImages1[currentImageIndex].title}</h1>
+            <div className="flex gap-5">
+              <p className="text-xl mb-8">{cardImages1[currentImageIndex].type}</p>
+              <p className="text-xl mb-8">Rating: {cardImages1[currentImageIndex].rating}</p>
             </div>
-
-            <div className="md:flex flex-col gap-3 hidden z-20">
-              <h2 className="text-2xl text-white">Todays Reccomendation</h2>
-
-              <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-3">
-                {heroImages.map(hi => <div key={hi.src}>
-                  <Image src={hi.src} alt="i" width={200} height={200} />
-                  
-                </div>)}
-              </div>
+            <div>
+              <button className="bg-red-600 flex gap-2 hover:bg-red-500 px-5 py-3 hover:scale-105 font-semibold rounded-md duration-200">
+                <FaPlayCircle className="text-2xl"/>
+                Watch Now
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
 
+      {/* Small images carousel */}
+      <div className="absolute bottom-10 left-0 right-0 z-30">
+        <h2 className="text-2xl text-white mb-3 text-center">Today's Recommendation</h2>
+        <div className="w-full overflow-x-auto">
+          <div 
+            ref={carouselRef} 
+            className="flex cursor-grab active:cursor-grabbing px-4 pb-4 space-x-4 min-w-max"
+          >
+            {cardImages1.map((hi, index) => (
+              <div
+                key={hi.src}
+                className="flex-shrink-0 cursor-pointer"
+                onClick={() => handleImageClick(index)}
+              >
+                <Image
+                  src={hi.src}
+                  alt={`Recommendation ${index + 1}`}
+                  width={100}
+                  height={100}
+                  className={`transition-opacity duration-300 ${
+                    index === currentImageIndex ? "opacity-100" : "opacity-50"
+                  }`}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
