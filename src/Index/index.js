@@ -139,6 +139,7 @@ export const heroImages = [
 
 export const CardImages = [
     {
+        id: 1,
         src: "/cards/cardimg1.png",
         year: "2019",
         type: "Action",
@@ -146,6 +147,7 @@ export const CardImages = [
         title: "Alien",
     },
     {
+        id: 2,
         src: "/cards/cardimg2.png",
         year: "2019",
         type: "Action",
@@ -153,6 +155,7 @@ export const CardImages = [
         title: "Alien",
     },
     {
+        id: 3,
         src: "/cards/cardimg3.png",
         year: "2019",
         type: "Action",
@@ -160,6 +163,7 @@ export const CardImages = [
         title: "Alien",
     },
     {
+        id: 4,
         src: "/cards/cardimg4.png",
         year: "2019",
         type: "Action",
@@ -167,6 +171,7 @@ export const CardImages = [
         title: "Alien",
     },
     {
+        id: 5,
         src: "/cards/cardimg5.png",
         year: "2019",
         type: "Action",
@@ -174,6 +179,7 @@ export const CardImages = [
         title: "Alien",
     },
     {
+        id: 6,
         src: "/cards/cardimg6.png",
         year: "2019",
         type: "Action",
@@ -181,6 +187,7 @@ export const CardImages = [
         title: "Alien",
     },
     {
+        id: 7,
         src: "/cards/cardimg7.png",
         year: "2019",
         type: "Action",
@@ -188,6 +195,7 @@ export const CardImages = [
         title: "Alien",
     },
     {
+        id: 8,
         src: "/cards/cardimg8.png",
         year: "2019",
         type: "Action",
@@ -195,6 +203,7 @@ export const CardImages = [
         title: "Alien",
     },
     {
+        id: 9,
         src: "/cards/cardimg9.png",
         year: "2019",
         type: "Action",

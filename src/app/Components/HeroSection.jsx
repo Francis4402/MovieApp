@@ -36,23 +36,23 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="bg-cover bg-center bg-no-repeat h-[800px] overflow-hidden relative">
+    <div className="bg-cover bg-center bg-no-repeat lg:h-[50rem] md:h-[33rem] h-[30rem] overflow-hidden relative">
       {/* Main hero image */}
       <div className="absolute inset-0 z-5">
         <Image
           src={cardImages1[currentImageIndex].src}
           alt={cardImages1[currentImageIndex].title}
-          layout="fill"
-          objectFit="cover"
-          priority
+          width={1000}
+          height={1000}
+          className="w-full h-fit"
         />
       </div>
 
       {/* Content overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50 z-10">
-        <div className="container lg:max-w-7xl mx-auto h-full flex items-center">
+        <div className="container lg:max-w-7xl mx-auto h-full flex items-center md:px-0 px-5">
           <div className="text-white max-w-2xl">
-            <h1 className="text-5xl font-bold mb-4">{cardImages1[currentImageIndex].title}</h1>
+            <h1 className="md:text-5xl text-3xl font-bold mb-4">{cardImages1[currentImageIndex].title}</h1>
             <div className="flex gap-5">
               <p className="text-xl mb-8">{cardImages1[currentImageIndex].type}</p>
               <p className="text-xl mb-8">Rating: {cardImages1[currentImageIndex].rating}</p>
