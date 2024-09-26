@@ -69,7 +69,7 @@ const HeroSection = () => {
 
       {/* Small images carousel */}
       <div className="absolute bottom-10 left-0 right-0 z-30">
-        <h2 className="text-2xl text-white mb-3 text-center">Today's Recommendation</h2>
+        <h2 className="text-2xl text-white mb-3 text-center">Today&apos;s Recommendation</h2>
         <div className="w-full overflow-x-auto">
           <div 
             ref={carouselRef} 
