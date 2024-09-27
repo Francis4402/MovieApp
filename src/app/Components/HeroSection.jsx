@@ -36,7 +36,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="bg-cover bg-center bg-no-repeat lg:h-[50rem] md:h-[33rem] h-[30rem] overflow-hidden relative">
+    <div className=" sm:h-[44rem] h-[30rem] overflow-hidden relative">
       {/* Main hero image */}
       <div className="absolute inset-0 z-5">
         <Image
@@ -44,7 +44,7 @@ const HeroSection = () => {
           alt={cardImages1[currentImageIndex].title}
           width={1000}
           height={1000}
-          className="w-full h-fit"
+          className="size-full object-cover object-center"
         />
       </div>
 
@@ -68,7 +68,7 @@ const HeroSection = () => {
       </div>
 
       {/* Small images carousel */}
-      <div className="absolute bottom-10 left-0 right-0 z-30">
+      <div className="absolute sm:bottom-10 bottom-[-3rem] left-0 right-0 z-30">
         <h2 className="text-2xl text-white mb-3 text-center">Today&apos;s Recommendation</h2>
         <div className="w-full overflow-x-auto">
           <div 

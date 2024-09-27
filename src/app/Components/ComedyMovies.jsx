@@ -109,7 +109,7 @@ const ComedyMovies = () => {
         </div>
       </div>
 
-      <div className='flex items-center gap-10'>
+      <div className='flex flex-row-reverse items-center gap-10'>
         <div ref={wrapperRef} className="overflow-hidden rounded-xl">
           <div ref={sliderRef} className="flex w-full gap-5" style={{willChange: 'transform'}}>
             {CardImages.map((ci) => (
@@ -131,7 +131,7 @@ const ComedyMovies = () => {
 
         <div className='lg:flex flex-col gap-5 hidden'>
           <hr className='w-20 border-gray-700'/>
-          <h2 className="md:text-4xl text-2xl text-white font-sans w-60">Action & Drama Movies</h2>
+          <h2 className="md:text-4xl text-2xl text-white font-sans">Comedy Movies</h2>
           
           <div className='flex gap-2 items-center'>
             <button

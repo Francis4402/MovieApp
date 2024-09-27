@@ -131,7 +131,7 @@ const FeaturedTVEpisodePremieres = () => {
 
         <div className='lg:flex flex-col gap-5 hidden'>
           <hr className='w-20 border-gray-700'/>
-          <h2 className="md:text-4xl text-2xl text-white font-sans w-60">Action & Drama Movies</h2>
+          <h2 className="md:text-4xl text-2xl text-white font-sans w-60">TV Episode Premieres</h2>
           
           <div className='flex gap-2 items-center'>
             <button
