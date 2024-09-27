@@ -1,49 +1,49 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
 import Image from "next/image";
-import { gsap } from "gsap";
-import { Draggable } from "gsap/Draggable";
 import { cardImages1 } from "@/Index";
 import { FaPlayCircle } from "react-icons/fa";
-
-gsap.registerPlugin(Draggable);
+import { gsap } from "gsap";
 
 const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const carouselRef = useRef(null);
-
+  const carouselWrapperRef = useRef(null);
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % cardImages1.length);
     }, 4000);
 
-    Draggable.create(carouselRef.current, {
-      type: "x",
-      edgeResistance: 0.65,
-      bounds: carouselRef.current.parentElement,
-      inertia: true,
-    });
-
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    const slides = carousel.children;
+    const slideWidth = slides[0].offsetWidth + 16; // 16 is the gap
+
+    gsap.to(carousel, {
+      x: -slideWidth * currentImageIndex,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  }, [currentImageIndex]);
 
   const handleImageClick = (index) => {
     setCurrentImageIndex(index);
   };
 
   return (
-    <div className="h-[44rem] overflow-hidden relative">
+    <div className="h-[50rem] overflow-hidden relative">
       {/* Main hero image */}
       <div className="absolute inset-0 z-5">
         <Image
           src={cardImages1[currentImageIndex].src}
           alt={cardImages1[currentImageIndex].title}
-          width={1000}
-          height={1000}
+          width={1920}
+          height={1080}
           className="size-full object-cover object-center"
         />
       </div>
@@ -68,24 +68,20 @@ const HeroSection = () => {
       </div>
 
       {/* Small images carousel */}
-      <div className="absolute bottom-5 left-0 right-0 z-30">
+      <div className="absolute bottom-0 left-0 right-0 z-30 bg-black bg-opacity-50 py-4">
         <h2 className="text-2xl text-white mb-3 text-center">Today&apos;s Recommendation</h2>
-        <div className="w-full overflow-x-auto">
+        <div className="w-full overflow-hidden" ref={carouselWrapperRef}>
           <div 
             ref={carouselRef} 
-            className="flex cursor-grab active:cursor-grabbing px-4 pb-4 space-x-4 min-w-max"
+            className="flex px-4 space-x-4"
           >
             {cardImages1.map((hi, index) => (
-              <div
-                key={hi.src}
-                className="flex-shrink-0 cursor-pointer"
-                onClick={() => handleImageClick(index)}
-              >
+              <div key={hi.id} onClick={() => handleImageClick(index)} className="flex-shrink-0 cursor-pointer">
                 <Image
                   src={hi.src}
                   alt={`Recommendation ${index + 1}`}
-                  width={200}
-                  height={200}
+                  width={150}
+                  height={84}
                   className={`transition-opacity duration-300 ${
                     index === currentImageIndex ? "opacity-100" : "opacity-50"
                   }`}

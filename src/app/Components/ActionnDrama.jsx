@@ -115,7 +115,7 @@ const ActionnDrama = () => {
             {CardImages.map((ci) => (
               <div key={ci.id} className="flex-shrink-0 w-60 rounded-lg">
                 <div className='w-full h-52'>
-                  <Image src={ci.src} alt={ci.title} width={500} height={500} className="w-full h-full object-cover" />
+                  <Image src={ci.src} alt={ci.title} width={720} height={1080} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex gap-2 text-gray-400 text-sm px-5 mt-2">
                   <p>{ci.year}</p>,

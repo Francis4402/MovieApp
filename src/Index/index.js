@@ -1,5 +1,6 @@
 export const cardImages1 = [
     {
+        id: 1,
         src: "/Screenshot (19).png",
         year: "2008",
         type: "Action",
@@ -7,6 +8,7 @@ export const cardImages1 = [
         title: "The Dark Knight",
     },
     {
+        id: 2,
         src: "/Screenshot (20).png",
         year: "2015",
         type: "Action",
@@ -14,6 +16,7 @@ export const cardImages1 = [
         title: "Mad Max: Fury Road",
     },
     {
+        id: 3,
         src: "/Screenshot (21).png",
         year: "2018",
         type: "Comedy-Drama",
@@ -21,6 +24,7 @@ export const cardImages1 = [
         title: "Oh Lucy!",
     },
     {
+        id: 4,
         src: "/Screenshot (22).png",
         year: "1979",
         type: "Sci-Fi Horror",
@@ -28,6 +32,7 @@ export const cardImages1 = [
         title: "Alien",
     },
     {
+        id: 5,
         src: "/Screenshot (23).png",
         year: "1994",
         type: "Drama",
@@ -35,6 +40,7 @@ export const cardImages1 = [
         title: "The Shawshank Redemption",
     },
     {
+        id: 6,
         src: "/Screenshot (24).png",
         year: "2010",
         type: "Sci-Fi",
@@ -42,6 +48,7 @@ export const cardImages1 = [
         title: "Inception",
     },
     {
+        id: 7,
         src: "/Screenshot (25).png",
         year: "2003",
         type: "Fantasy",
@@ -49,6 +56,7 @@ export const cardImages1 = [
         title: "The Lord of the Rings: The Return of the King",
     },
     {
+        id: 8,
         src: "/Screenshot (26).png",
         year: "1999",
         type: "Sci-Fi Action",
@@ -56,6 +64,7 @@ export const cardImages1 = [
         title: "The Matrix",
     },
     {
+        id: 9,
         src: "/Screenshot (28).png",
         year: "2014",
         type: "Sci-Fi",
@@ -63,6 +72,7 @@ export const cardImages1 = [
         title: "Interstellar",
     },
     {
+        id: 10,
         src: "/Screenshot (29).png",
         year: "1994",
         type: "Crime",
@@ -70,6 +80,7 @@ export const cardImages1 = [
         title: "Pulp Fiction",
     },
     {
+        id: 11,
         src: "/Screenshot (30).png",
         year: "2019",
         type: "Thriller",
@@ -77,6 +88,7 @@ export const cardImages1 = [
         title: "Parasite",
     },
     {
+        id: 12,
         src: "/Screenshot (33).png",
         year: "2001",
         type: "Animation",
@@ -84,6 +96,7 @@ export const cardImages1 = [
         title: "Spirited Away",
     },
     {
+        id: 13,
         src: "/Screenshot (42).png",
         year: "1972",
         type: "Crime",
@@ -91,6 +104,7 @@ export const cardImages1 = [
         title: "The Godfather",
     },
     {
+        id: 14,
         src: "/Screenshot (43).png",
         year: "2000",
         type: "Drama",
@@ -98,13 +112,15 @@ export const cardImages1 = [
         title: "Memento",
     },
     {
+        id: 15,
         src: "/Screenshot (46).png",
         year: "2014",
         type: "Comedy",
         rating: "8.1",
         title: "The Grand Budapest Hotel",
     },
-]
+];
+
 
 
 export const heroImages = [

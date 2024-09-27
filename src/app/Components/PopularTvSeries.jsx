@@ -16,7 +16,7 @@ const PopularTvSeries = () => {
             </div>
 
             {CardImages.map(ci => <div key={ci.title} className="lg:flex flex-col hidden">
-                <Image src={ci.src} alt="i" width={200} height={200} />
+                <Image src={ci.src} alt="i" width={200} height={300} />
                 <div className="flex gap-2 text-gray-400 text-sm">
                     <p>{ci.year}</p>
                     <p>{ci.type}</p>
@@ -29,7 +29,7 @@ const PopularTvSeries = () => {
 
             <div className="lg:hidden flex flex-row flex-wrap justify-center items-center gap-10">
                 {CardImages.map(ci => <div key={ci.src} className="flex flex-col gap-2 lg:hidden">
-                    <Image src={ci.src} alt="i" width={200} height={200} />
+                    <Image src={ci.src} alt="i" width={200} height={300} />
                     <div className="flex gap-2 text-gray-400 text-sm">
                         <p>{ci.year}</p>
                         <p>{ci.type}</p>
@@ -40,6 +40,14 @@ const PopularTvSeries = () => {
                     </div>
                 </div>)}
             </div>
+        </div>
+
+        <div className="my-20 flex justify-center items-center">
+            <hr className="w-full border-gray-500"/>
+            <button className="w-full py-2 text-gray-400 border border-gray-500 rounded-md hover:border-gray-400 hover:text-white duration-200">
+                View More
+            </button>
+            <hr className="w-full border-gray-500"/>
         </div>
     </div>
   )
