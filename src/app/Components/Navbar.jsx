@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="relative sm:flex sm:items-center sm:justify-between">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-10">
-              <Link className="flex-none font-semibold text-2xl text-white focus:outline-none focus:opacity-80" href="#" aria-label="Brand">Movie App</Link>
+              <Link className="flex-none font-semibold text-2xl text-white focus:outline-none focus:opacity-80" href="/" aria-label="Brand">Movie App</Link>
 
               <div id="hs-navbar-basic-usage" className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow lg:block" aria-labelledby="hs-navbar-basic-usage-collapse">
                 <div className="flex flex-col gap-y-3 sm:gap-y-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
