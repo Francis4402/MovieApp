@@ -36,7 +36,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className=" sm:h-[44rem] h-[30rem] overflow-hidden relative">
+    <div className="h-[44rem] overflow-hidden relative">
       {/* Main hero image */}
       <div className="absolute inset-0 z-5">
         <Image
@@ -68,7 +68,7 @@ const HeroSection = () => {
       </div>
 
       {/* Small images carousel */}
-      <div className="absolute sm:bottom-10 bottom-5 left-0 right-0 z-30">
+      <div className="absolute bottom-5 left-0 right-0 z-30">
         <h2 className="text-2xl text-white mb-3 text-center">Today&apos;s Recommendation</h2>
         <div className="w-full overflow-x-auto">
           <div 
@@ -84,8 +84,8 @@ const HeroSection = () => {
                 <Image
                   src={hi.src}
                   alt={`Recommendation ${index + 1}`}
-                  width={100}
-                  height={100}
+                  width={200}
+                  height={200}
                   className={`transition-opacity duration-300 ${
                     index === currentImageIndex ? "opacity-100" : "opacity-50"
                   }`}
