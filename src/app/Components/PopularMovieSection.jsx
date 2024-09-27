@@ -30,7 +30,7 @@ const PopularMovieSection = () => {
 
             <div className="lg:hidden flex flex-row flex-wrap justify-center items-center gap-10">
                 {CardImages.map(ci => <div key={ci.src} className="flex flex-col gap-2 lg:hidden">
-                    <Image src={ci.src} alt="i" width={200} height={300} />
+                    <Image src={ci.src} alt="i" width={100} height={200} />
                     <div className="flex gap-2 text-gray-400 text-sm">
                         <p>{ci.year}</p>
                         <p>{ci.type}</p>
