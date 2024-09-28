@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { CardImages } from "@/Index";
 import Link from "next/link";
+import { FaHome } from "react-icons/fa";
 
 
 const Login = () => {
@@ -38,7 +39,11 @@ const Login = () => {
 
         <div className="flex flex-col gap-5 justify-center items-center w-full h-screen md:bg-none relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-black to-blue-950 animate-gradient-x"></div>
+            
+            <Link href={"/"} className="absolute top-10 right-10 text-white flex items-center gap-2 hover:text-purple-500 duration-200"><FaHome size={20} />Home</Link>
+            
             <div className="relative z-10 flex flex-col gap-5 items-center w-full">
+                
                 <h1 className="text-2xl font-bold text-white">Login</h1>
 
                 <div className="space-y-8 text-white w-80">
