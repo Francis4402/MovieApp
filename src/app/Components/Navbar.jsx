@@ -78,7 +78,7 @@ const Navbar = () => {
                 </button>
             </div>
 
-            <Link href={"/login"} className="hidden md:flex px-5 py-2 rounded-md bg-blue-500 text-white">
+            <Link href={"/auth/login"} className="hidden md:flex px-5 py-2 rounded-md bg-blue-500 text-white">
                 Login
             </Link>
           </div>

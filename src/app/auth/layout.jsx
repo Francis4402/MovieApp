@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import PrelineScript from "../preline/PrelineScript";
 
+
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
     variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistSans = localFont({
   });
   
   export const metadata = {
-    title: "Movie App",
+    title: "Login",
     description: "Best Movie App In The World",
   };
 
