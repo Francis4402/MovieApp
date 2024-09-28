@@ -53,7 +53,7 @@ const TopMovieLists = () => {
 
             <div className='grid md:grid-cols-2'>
                 {
-                    CardImages.slice(0, 8).map(items => <div key={items.src} className=' border-gray-700'>
+                    CardImages.slice(0, 8).map(items => <div key={items.id} className=' border-gray-700'>
                         <div className='flex gap-5'>
                             <Image src={items.src} alt="i" width={80} height={80} />
                             <div className='flex flex-col gap-2'>

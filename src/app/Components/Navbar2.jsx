@@ -17,10 +17,10 @@ const Navbar2 = () => {
     
     <nav className="border-gray-200 bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-5 lg:px-0 px-10">
-      <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+      <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Movie App</span>
-      </a>
+      </Link>
       <div className="flex md:order-2">
         
         <div className="relative hidden md:block">
@@ -40,20 +40,20 @@ const Navbar2 = () => {
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
               <FaSearch size={20} className='text-gray-500' />
             </div>
-            <input type="text" id="search-navbar" className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg  placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." />
+            <input type="text" id="search-navbar" className="block w-full p-2 ps-10 text-sm text-white bg-transparent border border-gray-300 rounded-lg  placeholder-gray-400" placeholder="Search..." />
           </div>
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-500 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li>
-              <a href="#" className="block py-2 px-3 text-gray-300 rounded md:p-0">Home</a>
+              <Link href="/" className="block py-2 px-3 text-gray-300 rounded md:p-0">Home</Link>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-gray-300 rounded md:p-0">About</a>
+              <Link href="/about" className="block py-2 px-3 text-gray-300 rounded md:p-0">About</Link>
             </li>
             <li>
-              <a href="#" className="block py-2 px-3 text-gray-300 rounded md:p-0 ">Services</a>
+              <Link href="/services" className="block py-2 px-3 text-gray-300 rounded md:p-0 ">Services</Link>
             </li>
             <li>
-              <Link href="/auth/login" className="block py-2 px-3 text-gray-300 rounded md:p-0 ">Login</Link>
+              <Link href="/auth/login" className="text-gray-300 py-2 px-5 text-sm bg-blue-600 rounded">Login</Link>
             </li>
           </ul>
         </div>

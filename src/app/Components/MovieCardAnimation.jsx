@@ -45,7 +45,7 @@ function Cards({ category, from, len = Math.PI * 2, radius = 5.25, onPointerOver
         </Text>
       </Billboard>
 
-      {Array.from({ length: amount - 3 /* minus 3 images at the end, creates a gap */ }, (_, i) => {
+      {Array.from({ length: amount - 3 }, (_, i) => {
         const angle = from + (i / amount) * len
         return (
           <Card

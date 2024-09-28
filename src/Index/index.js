@@ -125,30 +125,39 @@ export const cardImages1 = [
 
 export const heroImages = [
     {
+        id: 1,
         src: "/Screenshot (10).png",
     },
     {
+        id: 2,
         src: "/Screenshot (11).png",
     },
     {
+        id: 3,
         src: "/Screenshot (12).png",
     },
     {
+        id: 4,
         src: "/Screenshot (13).png",
     },
     {
+        id: 5,
         src: "/Screenshot (14).png",
     },
     {
+        id: 6,
         src: "/Screenshot (15).png",
     },
     {
+        id: 7,
         src: "/Screenshot (16).png",
     },
     {
+        id: 8,
         src: "/Screenshot (17).png",
     },
     {
+        id: 9,
         src: "/Screenshot (18).png",
     },
 ]

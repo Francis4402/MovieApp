@@ -15,7 +15,7 @@ const PopularTvSeries = () => {
                 </div>
             </div>
 
-            {CardImages.map(ci => <div key={ci.title} className="lg:flex flex-col hidden">
+            {CardImages.map(ci => <div key={ci.id} className="lg:flex flex-col hidden">
                 <Image src={ci.src} alt="i" width={200} height={300} />
                 <div className="flex gap-2 text-gray-400 text-sm">
                     <p>{ci.year}</p>
@@ -28,7 +28,7 @@ const PopularTvSeries = () => {
             </div>)}
 
             <div className="lg:hidden flex flex-row flex-wrap justify-center items-center gap-10">
-                {CardImages.map(ci => <div key={ci.src} className="flex flex-col gap-2 lg:hidden">
+                {CardImages.map(ci => <div key={ci.id} className="flex flex-col gap-2 lg:hidden">
                     <Image src={ci.src} alt="i" width={100} height={200} />
                     <div className="flex gap-2 text-gray-400 text-sm">
                         <p>{ci.year}</p>

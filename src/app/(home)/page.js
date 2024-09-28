@@ -1,18 +1,15 @@
-"use client"
 
-import { useEffect } from "react";
-import ActionnDrama from "./Components/ActionnDrama";
-import Banner from "./Components/Banner";
-import ComedyMovies from "./Components/ComedyMovies";
-import FeaturedTVEpisodePremieres from "./Components/FeaturedTVEpisodePremieres";
-import Footer from "./Components/Footer";
-import HeroSection from "./Components/HeroSection";
-import MovieSeason from "./Components/MovieSerreis";
+import ActionnDrama from "../Components/ActionnDrama";
+import Banner from "../Components/Banner";
+import ComedyMovies from "../Components/ComedyMovies";
+import FeaturedTVEpisodePremieres from "../Components/FeaturedTVEpisodePremieres";
+import HeroSection from "../Components/HeroSection";
+import MovieSeason from "../Components/MovieSerreis";
 
-import PopularMovieSection from "./Components/PopularMovieSection";
-import PopularTvSeries from "./Components/PopularTvSeries";
-import RomanticMovies from "./Components/RomanticMovies";
-import TopMovieLists from "./Components/TopMovieLists";
+import PopularMovieSection from "../Components/PopularMovieSection";
+import PopularTvSeries from "../Components/PopularTvSeries";
+import RomanticMovies from "../Components/RomanticMovies";
+import TopMovieLists from "../Components/TopMovieLists";
 
 
 export default function Home() {
@@ -45,7 +42,6 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer/>
     </div>
   );
 }
