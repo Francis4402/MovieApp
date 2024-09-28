@@ -1,7 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import PrelineScript from "./preline/PrelineScript";
-import Navbar from "./Components/Navbar";
+import Navbar2 from "./Components/Navbar2";
+
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,8 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PrelineScript/>
-        <Navbar/>
+        <Navbar2/>
         {children}
       </body>
     </html>

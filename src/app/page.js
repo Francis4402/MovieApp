@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect } from "react";
 import ActionnDrama from "./Components/ActionnDrama";
 import Banner from "./Components/Banner";
 import ComedyMovies from "./Components/ComedyMovies";
@@ -13,11 +16,12 @@ import TopMovieLists from "./Components/TopMovieLists";
 
 
 export default function Home() {
+
   return (
     <div>
       <HeroSection/>
       <div className="flex justify-center">
-        <div className="container lg:max-w-7xl md:px-0 px-5">
+        <div className="container lg:max-w-screen-xl md:px-0 px-5">
           <PopularMovieSection/>
           <RomanticMovies/>
         </div>
@@ -26,7 +30,7 @@ export default function Home() {
       <Banner/>
 
       <div className="flex justify-center">
-        <div className="container lg:max-w-7xl md:px-0 px-5">
+        <div className="container lg:max-w-screen-xl md:px-0 px-5">
           <ActionnDrama/>
           <ComedyMovies/>
         </div>
@@ -34,7 +38,7 @@ export default function Home() {
       
       <MovieSeason/>
       <div className="flex justify-center">
-        <div className="container lg:max-w-7xl md:px-0 px-5">
+        <div className="container lg:max-w-screen-xl md:px-0 px-5">
           <PopularTvSeries/>
           <FeaturedTVEpisodePremieres/>
           <TopMovieLists/>
