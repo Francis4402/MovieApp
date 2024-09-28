@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { FaBars, FaSearch } from 'react-icons/fa'
-import { MdKeyboardArrowDown } from "react-icons/md";
+
 
 const Navbar2 = () => {
 

@@ -59,7 +59,7 @@ const Login = () => {
                     </button>
 
                     <div className="flex justify-center items-center gap-2">
-                        <p className="text-sm text-gray-400">Don't have an account?</p>
+                        <p className="text-sm text-gray-400">Don&apos;t have an account?</p>
                         <Link href="/auth/register" className="text-blue-500 hover:text-blue-600 duration-200">Register</Link>
                     </div>
                 </div>
