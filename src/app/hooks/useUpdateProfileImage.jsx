@@ -1,9 +1,9 @@
 import React from 'react'
 
-const useUpdateProfileImage = () => {
+const UseUpdateProfileImage = () => {
   return (
     <div>useUpdateProfileImage</div>
   )
 }
 
-export default useUpdateProfileImage
+export default UseUpdateProfileImage

@@ -2,9 +2,10 @@
 
 import { createContext, useContext, useEffect, useState } from "react"
 import { account, ID } from "../libs/AppWriteClient";
-import useGetProfileByUserId from "../hooks/useGetProfileByUserId";
-import useCreateProfile from "../hooks/useCreateProfile";
+
 import { useRouter } from "next/navigation";
+import UseGetProfileByUserId from "../hooks/useGetProfileByUserId";
+import UseCreateProfile from "../hooks/useCreateProfile";
 
 
 const UserContext = createContext(null);
@@ -21,7 +22,7 @@ const UserProvider = ({ children }) => {
             if (!currentSession) return
 
             const promise = await account.get()
-            const profile = await useGetProfileByUserId(promise?.$id)
+            const profile = await UseGetProfileByUserId(promise?.$id)
             setUser({id: promise?.$id, name: profile?.name, image: profile?.image})
         } catch (error) {
             setUser(null);
@@ -36,7 +37,7 @@ const UserProvider = ({ children }) => {
             
             await account.createEmailPasswordSession(email, password);
 
-            await useCreateProfile(promise?.$id, name, process.env.NEXT_PUBLIC_PLACEHOLDER_DEFAULT_IMAGE_ID);
+            await UseCreateProfile(promise?.$id, name, process.env.NEXT_PUBLIC_PLACEHOLDER_DEFAULT_IMAGE_ID);
 
             await checkUser();
 

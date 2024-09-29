@@ -1,7 +1,7 @@
 
 import { database, Query } from '../libs/AppWriteClient';
 
-const useGetRandomUsers = async() => {
+const UseGetRandomUsers = async() => {
   try {
     const profileResult = await database.listDocuments(
         process.env.NEXT_PUBLIC_DATABASE_ID,
@@ -29,4 +29,4 @@ const useGetRandomUsers = async() => {
   }
 }
 
-export default useGetRandomUsers
+export default UseGetRandomUsers

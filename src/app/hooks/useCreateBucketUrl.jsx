@@ -1,9 +1,9 @@
 import React from 'react'
 
-const useCreateBucketUrl = () => {
+const UseCreateBucketUrl = () => {
   return (
     <div>useCreateBucketUrl</div>
   )
 }
 
-export default useCreateBucketUrl
+export default UseCreateBucketUrl

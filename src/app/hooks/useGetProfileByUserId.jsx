@@ -1,6 +1,6 @@
 import { database, Query } from '../libs/AppWriteClient'
 
-const useGetProfileByUserId = async (userId) => {
+const UseGetProfileByUserId = async (userId) => {
   try {
     const res = await database.listDocuments(
         process.env.NEXT_PUBLIC_DATABASE_ID,
@@ -24,4 +24,4 @@ const useGetProfileByUserId = async (userId) => {
   }
 }
 
-export default useGetProfileByUserId
+export default UseGetProfileByUserId

@@ -59,8 +59,6 @@ const Navbar2 = () => {
               <Link href="/services" className="block py-2 px-3 text-gray-300 rounded md:p-0 ">Services</Link>
             </li>
 
-            
-            
             {
               !contextUser?.user?.id ? (
                 <li>

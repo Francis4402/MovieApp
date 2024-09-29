@@ -1,9 +1,9 @@
 import React from 'react'
 
-const useChangeUserImage = () => {
+const UseChangeUserImage = () => {
   return (
     <div>useChangeUserImage</div>
   )
 }
 
-export default useChangeUserImage
+export default UseChangeUserImage
