@@ -3,9 +3,15 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { FaBars, FaSearch } from 'react-icons/fa'
+import { useUser } from '../context/user';
+import { useRouter } from 'next/navigation';
+import { FiLogOut } from "react-icons/fi";
 
 
 const Navbar2 = () => {
+
+  const contextUser = useUser();
+  const router = useRouter();
 
   useEffect(() => {
     import('flowbite').then(flowbite => {
@@ -52,9 +58,26 @@ const Navbar2 = () => {
             <li>
               <Link href="/services" className="block py-2 px-3 text-gray-300 rounded md:p-0 ">Services</Link>
             </li>
-            <li>
-              <Link href="/auth/login" className="text-gray-300 py-2 px-5 text-sm bg-blue-600 rounded">Login</Link>
-            </li>
+
+            
+            
+            {
+              !contextUser?.user?.id ? (
+                <li>
+                  <Link href="/auth/login" className="text-gray-300 py-2 px-5 text-sm bg-blue-600 rounded">Login</Link>
+                </li>
+              ) : (
+                <li>
+                  <button onClick={async () => {
+                  await contextUser?.logout()
+                  router.push('/')
+                }} className='text-gray-300 py-2 px-5 text-sm bg-red-600 rounded flex items-center hover:bg-red-700 duration-200'>
+                  <FiLogOut size={20} />
+                  <span className='pl-2 font-semibold text-sm'>Log Out</span>
+                </button>
+                </li>
+              )
+            }
           </ul>
         </div>
       </div>

@@ -5,9 +5,48 @@ import Image from "next/image";
 import { CardImages } from "@/Index";
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
+import { useGeneralStore } from "@/app/stores/GeneralStore";
+import { useUser } from "@/app/context/user";
+import { useRouter } from "next/navigation";
+import TextInput from "@/app/Components/TextInput";
+import { BiLoaderCircle } from "react-icons/bi";
+import toast from "react-hot-toast";
 
 
-const Login = () => {
+export default function Login() {
+    let { setIsLoginOpen } = useGeneralStore();
+
+    const router = useRouter();
+    const contextUser = useUser();
+
+    const [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
+
+    const validate = () => {
+        
+        setError(null)
+
+        let isError = false
+
+        if (!email) {
+            setError({ type: 'email', message: 'An Email is required'})
+            isError = true
+        } else if (!password) {
+            setError({ type: 'password', message: 'A Password is required'})
+            isError = true
+        }
+        return isError
+    }
+
+    const showError = (type) => {
+        if (error && Object.entries(error).length > 0 && error?.type == type) {
+            return error.message
+        }
+        return ''
+    }
+
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
@@ -16,9 +55,27 @@ const Login = () => {
         }, 4000);
     
         return () => clearInterval(interval);
-      }, []);
+    }, []);
 
 
+    const login = async () => {
+        let isError = validate();
+        if(isError) return;
+        if(!contextUser) return;
+
+        try {
+            setLoading(true)
+            await contextUser.login(email, password)
+            setLoading(false)
+            setIsLoginOpen(false)
+            toast.success('Login Success')
+            router.push('/')
+        } catch (error) {
+            console.log(error)
+            setLoading(false)
+            toast.error('Login Failed')
+        }
+    }
 
   return (
     <div className="flex justify-between w-full">
@@ -46,22 +103,16 @@ const Login = () => {
                 
                 <h1 className="text-2xl font-bold text-white">Login</h1>
 
-                <div className="space-y-8 text-white w-80">
-                    <input 
-                        type="email" 
-                        className="py-3 px-4 block w-full bg-transparent border-b border-t border-gray-600 focus:outline-none rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none" 
-                        placeholder="Email" 
-                    />
-
-                    <input 
-                        type="password" 
-                        className="py-3 px-4 block w-full bg-transparent border-b border-t border-gray-600 focus:outline-none rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none" 
-                        placeholder="Password" 
-                    />
-
-                    <button className="bg-blue-600/30 hover:bg-blue-600/60 hover:scale-105 duration-200 px-4 py-2 rounded-md w-full">
-                        Login
+                <div className="flex flex-col gap-3 text-white w-80">
+                    
+                    <TextInput string={email} inputType="email" placeholder="Email" error={showError('email')} onUpdate={setEmail} />
+                    
+                    <TextInput string={password} inputType="password" placeholder="Password" error={showError('password')} onUpdate={setPassword} />
+                    
+                    <button disabled={loading} onClick={() => login()} className={`hover:scale-105 duration-200 px-4 py-2 rounded-md w-full ${(!email || !password) ? 'bg-red-600/30' : 'bg-blue-600/30 hover:bg-blue-600/60'}`}>
+                        {loading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Log in'}
                     </button>
+
 
                     <div className="flex justify-center items-center gap-2">
                         <p className="text-sm text-gray-400">Don&apos;t have an account?</p>
@@ -73,5 +124,3 @@ const Login = () => {
     </div>
   )
 }
-
-export default Login
