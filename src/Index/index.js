@@ -236,3 +236,44 @@ export const CardImages = [
         title: "Alien",
     },
 ]
+
+export const movieGenre = [
+    {
+        id: 1,
+        name: "Action",
+    },
+    {
+        id: 2,
+        name: "Adventure",
+    },
+    {
+        id: 3,
+        name: "Comedy",
+    },
+    {
+        id: 4,
+        name: "Drama",
+    },
+    {
+        id: 5,
+        name: "Horror",
+    },
+    {
+        id: 6,
+        name: "Romance",
+    },
+    {
+        id: 7,
+        name: "Sci-Fi",
+    },
+    {
+        id: 8,
+        name: "Thriller",
+    },
+    {
+        id: 9,
+        name: "Amination",
+    },
+]
+
+

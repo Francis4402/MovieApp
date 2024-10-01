@@ -110,7 +110,7 @@ export default function Login() {
                     <TextInput string={password} inputType="password" placeholder="Password" error={showError('password')} onUpdate={setPassword} />
                     
                     <button disabled={loading} onClick={() => login()} className={`hover:scale-105 duration-200 px-4 py-2 rounded-md w-full ${(!email || !password) ? 'bg-red-600/30' : 'bg-blue-600/30 hover:bg-blue-600/60'}`}>
-                        {loading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Log in'}
+                        {loading ? <BiLoaderCircle className="animate-spin flex mx-auto" color="#ffffff" size={25} /> : 'Log in'}
                     </button>
 
 

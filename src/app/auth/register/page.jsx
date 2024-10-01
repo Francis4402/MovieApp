@@ -129,7 +129,7 @@ const Register = () => {
                             onClick={() => register()} 
                             className={`hover:scale-105 duration-200 px-4 py-2 rounded-md w-full ${(!name || !email || !password ) ? 'bg-red-600/30 hover:bg-blue-600/60' : 'bg-blue-600/30 hover:bg-blue-600/60'}`}
                         >
-                            {loading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Register'}
+                            {loading ? <BiLoaderCircle className="animate-spin flex mx-auto" color="#ffffff" size={25} /> : 'Register'}
                         </button>
 
                         {error && <p className="text-red-500 text-sm mt-2">{error.message}</p>}
