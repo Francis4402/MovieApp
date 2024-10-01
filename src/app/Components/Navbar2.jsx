@@ -14,16 +14,17 @@ const Navbar2 = () => {
   const contextUser = useUser();
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMoviesMenuOpen, setIsMoviesMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const moviesMenuRef = useRef(null);
 
   useEffect(() => {
-    import('flowbite').then(flowbite => {
-      flowbite.initFlowbite();
-    });
-
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
+      }
+      if (moviesMenuRef.current && !moviesMenuRef.current.contains(event.target) && !event.target.closest('.movies-menu')) {
+        setIsMoviesMenuOpen(false);
       }
     };
 
@@ -36,6 +37,10 @@ const Navbar2 = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const toggleMoviesMenu = () => {
+    setIsMoviesMenuOpen(!isMoviesMenuOpen);
+  }
 
   return (
     <nav className="border-gray-200 bg-gray-900">
@@ -97,8 +102,8 @@ const Navbar2 = () => {
             <li>
               <Link href="/" className="flex items-center gap-1 py-2 px-3 rounded md:p-0 text-white hover:text-blue-500 duration-200">Home</Link>
             </li>
-            <li>
-              <p className="flex items-center gap-1 py-2 px-3 cursor-pointer rounded md:p-0 text-white hover:text-blue-500 duration-200">Movies <IoIosArrowDown /></p>
+            <li ref={moviesMenuRef}>
+              <p onClick={toggleMoviesMenu} className="movies-menu flex items-center gap-1 py-2 px-3 cursor-pointer rounded md:p-0 text-white hover:text-blue-500 duration-200">Movies <IoIosArrowDown /></p>
             </li>
             
             <li>
@@ -108,7 +113,9 @@ const Navbar2 = () => {
         </div>
       </div>
 
-      <MoviesMenu />
+      <div ref={moviesMenuRef}>
+        <MoviesMenu isOpen={isMoviesMenuOpen} />
+      </div>
     </nav>
   )
 }

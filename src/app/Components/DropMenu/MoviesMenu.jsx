@@ -1,19 +1,22 @@
 import { movieGenre } from '@/Index'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
-const MoviesMenu = () => {
+
+const MoviesMenu = ({ isOpen, moviesMenuRef }) => {
+    
   return (
-    <div className='absolute top-20 left-0 w-full h-fit p-8 rounded-md bg-gray-800 z-20'>
-        <div className='container lg:max-w-screen-xl mx-auto'>
+    <div className={`absolute left-0 w-full bg-gray-800 transition-all duration-200 z-20 py-8 ${
+        isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20 pointer-events-none'
+      }`}>
+        <div className='container lg:max-w-screen-xl mx-auto lg:px-0 px-10'>
             <div className='flex flex-col gap-3'>
                 
-                <div className='relative flex justify-between gap-10 items-start'>
+                <div className='relative flex md:flex-row flex-col md:justify-between gap-10 items-start'>
                     <div className='flex flex-col gap-2'>
                         <h4 className='text-white font-bold'>Movie of the day</h4>
 
-                        <div className='flex gap-5'>
+                        <div className='flex md:flex-row flex-col gap-5'>
                             <Image src={'/cards/cardimg8.png'} alt='i' width={100} height={200} />
                             <div className='flex flex-col gap-2'>
                                 <p className='text-gray-400 text-sm'>2024,Action, Crime</p>
@@ -32,13 +35,14 @@ const MoviesMenu = () => {
                         <h4 className='text-white font-bold'>Movies Genre</h4>
 
                         <ul className='text-gray-400 grid grid-cols-2 gap-x-16 gap-y-4'>
-                            {movieGenre.map(c => <li key={c.id} className='text-sm'>{c.name}</li>)}
+                            {movieGenre.map(c => <Link href={'/'} key={c.id} className='text-sm hover:underline'>{c.name}</Link>)}
                         </ul>
                     </div>
 
                     <div>
 
                     </div>
+
                 </div>
             </div>
         </div>
