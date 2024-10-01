@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const TVShowsMenu = ({ isOpen }) => {
   return (
-    <div className={`absolute left-1/2 w-fit bg-gray-800 transition-all duration-200 z-20 p-8 rounded-b-md ${
+    <div className={`absolute lg:left-1/2 left-1/4 w-fit bg-gray-800 transition-all duration-200 z-20 p-8 rounded-b-md ${
         isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20 pointer-events-none'
       }`}>
         <div className='container lg:max-w-screen-xl mx-auto lg:px-0 px-10'>

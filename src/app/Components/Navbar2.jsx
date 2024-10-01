@@ -85,12 +85,12 @@ const Navbar2 = () => {
               </button>
 
               <div
-                className={`z-50 absolute right-0 mt-2 text-base list-none bg-gray-800 divide-y divide-gray-100 rounded-lg shadow bg-gray-700 divide-gray-600 transition-all duration-200 ${
+                className={`z-50 absolute right-0 mt-2 text-base list-none divide-y rounded-lg shadow bg-gray-700 divide-gray-600 transition-all duration-200 ${
                   isDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
                 }`}
               >
                 <div className="px-4 py-3">
-                  <span className="block text-sm text-white">{contextUser?.user?.name}</span>
+                  <span className="block text-sm text-white">{contextUser?.user?.labels}</span>
                 </div>
                 <ul className="py-2">
                   <li>
@@ -114,14 +114,14 @@ const Navbar2 = () => {
         <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  bg-gray-800 md:bg-gray-900 border-gray-700">
             <li>
-              <Link href="/" className="flex items-center gap-1 py-2 px-3 rounded md:p-0 text-white hover:text-blue-500 duration-200">Home</Link>
+              <Link href="/" className="flex items-center gap-1 py-2 px-3 rounded md:p-0 text-white hover:text-blue-500 focus:text-blue-500 duration-200">Home</Link>
             </li>
             <li ref={moviesMenuRef}>
-              <p onClick={toggleMoviesMenu} className="movies-menu flex items-center gap-1 py-2 px-3 cursor-pointer rounded md:p-0 text-white hover:text-blue-500 duration-200">Movies <IoIosArrowDown /></p>
+              <button onClick={toggleMoviesMenu} className="movies-menu flex items-center gap-1 py-2 px-3 cursor-pointer rounded md:p-0 text-white hover:text-blue-500 focus:text-blue-500 duration-200">Movies <IoIosArrowDown /></button>
             </li>
             
             <li ref={tvShowsMenuRef}>
-              <p onClick={toggleTVShowsMenu} className="tv-shows-menu flex items-center gap-1 py-2 px-3 cursor-pointer rounded md:p-0 text-white hover:text-blue-500 duration-200">TV Shows <IoIosArrowDown /></p>
+              <button onClick={toggleTVShowsMenu} className="tv-shows-menu flex items-center gap-1 py-2 px-3 cursor-pointer rounded md:p-0 text-white hover:text-blue-500 focus:text-blue-500 duration-200">TV Shows <IoIosArrowDown /></button>
             </li>
           </ul>
         </div>
