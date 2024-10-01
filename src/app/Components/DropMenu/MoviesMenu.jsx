@@ -3,16 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-const MoviesMenu = ({ isOpen, moviesMenuRef }) => {
+const MoviesMenu = ({ isOpen }) => {
     
   return (
-    <div className={`absolute left-0 w-full bg-gray-800 transition-all duration-200 z-20 py-8 ${
+    <div className={`absolute left-0 w-full bg-gray-800 transition-all duration-200 z-20 py-8 rounded-b-md ${
         isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20 pointer-events-none'
       }`}>
         <div className='container lg:max-w-screen-xl mx-auto lg:px-0 px-10'>
             <div className='flex flex-col gap-3'>
                 
-                <div className='relative flex md:flex-row flex-col md:justify-between gap-10 items-start'>
+                <div className='relative flex justify-center gap-40 items-start'>
                     <div className='flex flex-col gap-2'>
                         <h4 className='text-white font-bold'>Movie of the day</h4>
 

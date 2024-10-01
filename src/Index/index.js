@@ -277,3 +277,54 @@ export const movieGenre = [
 ]
 
 
+export const tvGenre = [
+    {
+        id: 1,
+        name: "Trending TV Shows",
+    },
+    {
+        id: 2,
+        name: "Popular Now",
+    },
+    {
+        id: 3,
+        name: "New This Month",
+    },
+    {
+        id: 4,
+        name: "Vodi Exclusive",
+    },
+    {
+        id: 5,
+        name: "Just For Kids",
+    },
+    {
+        id: 6,
+        name: "Featured TV Shows",
+    },
+    {
+        id: 7,
+        name: "TV Series: Drama",
+    },
+    {
+        id: 8,
+        name: "TV Series: Comedy",
+    },
+    {
+        id: 9,
+        name: "TV Series: Action",
+    },
+    {
+        id: 10,
+        name: "TV Series: Horror",
+    },
+    {
+        id: 11,
+        name: "TV Series: Romance",
+    },
+    {
+        id: 12,
+        name: "TV Series: Sci-Fi",
+    }
+    
+]
