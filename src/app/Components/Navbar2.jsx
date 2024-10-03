@@ -11,9 +11,10 @@ import UseCreateBucketUrl from '../hooks/useCreateBucketUrl';
 import MoviesMenu from './DropMenu/MoviesMenu';
 import TVShowsMenu from './DropMenu/TVShowsMenu';
 import Sidebar from './DropMenu/Sidebar';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Navbar2 = () => {
-  const contextUser = useUser();
+  const {user, isLoading, logout} = useUser();
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMoviesMenuOpen, setIsMoviesMenuOpen] = useState(false);
@@ -57,6 +58,11 @@ const Navbar2 = () => {
     setIsTVShowsMenuOpen(!isTVShowsMenuOpen);
   }
 
+  const handleLogout = async () => {
+    await logout();
+    router.push('/');
+  }
+
   return (
     <nav className="border-gray-200 bg-gray-900">
       <div className="lg:max-w-screen-xl container md:px-0 px-5 flex flex-wrap items-center justify-between mx-auto py-5">
@@ -65,7 +71,11 @@ const Navbar2 = () => {
         </Link>
 
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          {!contextUser?.user?.id ? (
+          {isLoading ? (
+            
+            <AiOutlineLoading3Quarters size={20} className="text-blue-600 animate-spin" />
+
+          ) : !user ? (
             <Link href="/auth/login" className='bg-blue-700 hover:bg-blue-500 px-4 py-2 rounded-md duration-200 hover:scale-105 text-white'>Login</Link>
           ) : (
             <div ref={dropdownRef} className="relative">
@@ -77,8 +87,8 @@ const Navbar2 = () => {
                 <span className="sr-only">Open user menu</span>
                 <Image
                   className="w-8 h-8 rounded-full"
-                  src={UseCreateBucketUrl(contextUser?.user?.image)}
-                  alt="i"
+                  src={UseCreateBucketUrl(user.image)}
+                  alt="user avatar"
                   width={32}
                   height={32}
                 />
@@ -90,7 +100,7 @@ const Navbar2 = () => {
                 }`}
               >
                 <div className="px-4 py-3">
-                  <span className="block text-sm text-white">{contextUser?.user?.name}</span>
+                  <span className="block text-sm text-white">{user.name}</span>
                 </div>
                 <ul className="py-2">
                   <li>
@@ -100,7 +110,7 @@ const Navbar2 = () => {
                     <a href="#" className="block px-4 py-2 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Profile</a>
                   </li>
                   <li>
-                    <button onClick={async () => {await contextUser?.logout(), router.push('/')}} className="block px-4 py-2 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white w-full text-left">Sign out</button>
+                    <button onClick={handleLogout} className="block px-4 py-2 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white w-full text-left">Sign out</button>
                   </li>
                 </ul>
               </div>

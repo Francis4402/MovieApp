@@ -11,7 +11,7 @@ const Sidebar = () => {
     >
         <div className="overflow-y-auto py-5 px-3 h-full bg-gray-800">
             <form className="md:hidden mb-2">
-                <label for="sidebar-search" className="sr-only">Search</label>
+                <label htmlFor="sidebar-search" className="sr-only">Search</label>
 
                 <div className="relative">
                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -22,8 +22,8 @@ const Sidebar = () => {
                             xmlns="http://www.w3.org/2000/svg"
                         >
                             <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
+                            fillRule="evenodd"
+                            clipRule="evenodd"
                             d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                             ></path>
                         </svg>
@@ -60,13 +60,13 @@ const Sidebar = () => {
                 </li>
 
                 <li>
-                    <Link href="/uploadvideo" className="flex items-center p-2 text-base font-medium rounded-lg text-white hover:bg-gray-700 group gap-2">
+                    <Link href="/dashboard/uploadvideo" className="flex items-center p-2 text-base font-medium rounded-lg text-white hover:bg-gray-700 group gap-2">
                         <FaPlus /> Upload Videos
                     </Link>
                 </li>
 
                 <li>
-                    <Link href="/allusers" className="flex items-center p-2 text-base font-medium rounded-lg text-white hover:bg-gray-700 group gap-2">
+                    <Link href="/dashboard/allusers" className="flex items-center p-2 text-base font-medium rounded-lg text-white hover:bg-gray-700 group gap-2">
                         <FaUsers /> All Users
                     </Link>
                 </li>

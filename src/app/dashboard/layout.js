@@ -14,7 +14,9 @@ export default function RootLayout({ children }) {
       <UserProvider>
         <body>
           <Nav/>
-          {children}
+          <div className='bg-gray-900'>
+            {children}
+          </div>
           <Sidebar/>
         </body>
       </UserProvider>

@@ -7,10 +7,11 @@ import { FaBars, FaSearch } from "react-icons/fa"
 import { useUser } from "../context/user"
 import UseCreateBucketUrl from "../hooks/useCreateBucketUrl"
 import { useRouter } from "next/navigation"
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 
 const Nav = () => {
-    const contextUser = useUser();
+    const {user, isLoading, logout } = useUser();
     const router = useRouter();
 
     useEffect(() => {
@@ -19,6 +20,10 @@ const Nav = () => {
         });
     })
 
+    const handleLogout = async () => {
+        await logout();
+        router.push('/');
+      }
 
 
   return (
@@ -42,7 +47,7 @@ const Nav = () => {
                 </Link>
 
                 <form method="GET" className="hidden md:block md:pl-2">
-                    <label for="topbar-search" className="sr-only">Search</label>
+                    <label htmlFor="topbar-search" className="sr-only">Search</label>
                     <div className="relative w-64 md:w-96">
                     <div
                         className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
@@ -76,20 +81,40 @@ const Nav = () => {
                     aria-expanded="false"
                     data-dropdown-toggle="dropdown"
                 >
-                <span className="sr-only">Open user menu</span>
-                    <Image
-                    className="w-8 h-8 rounded-full"
-                    src={UseCreateBucketUrl(contextUser?.user?.image)}
-                    alt="user photo"
-                    width={100} height={100}
-                    />
+                {
+                    isLoading ? (
+                        <AiOutlineLoading3Quarters size={20} className="text-blue-600 animate-spin" />
+                    ) : (
+                        <div>
+                            <span className="sr-only">Open user menu</span>
+                            <Image
+                            className="w-8 h-8 rounded-full"
+                            src={UseCreateBucketUrl(user?.image)}
+                            alt="user photo"
+                            width={100} height={100}
+                            />
+                        </div>
+                    )
+                }
                 </button>
 
                 <div className="hidden z-50 my-4 w-56 text-base list-none divide-y shadow bg-gray-700 divide-gray-600 rounded-xl"
                 id="dropdown">
                     <div className="py-3 px-4">
-                        <span className="block text-sm font-semibold text-white">{contextUser?.user?.name}</span>
+                        <span className="block text-sm font-semibold text-white">{user?.name}</span>
                     </div>
+
+                    <ul
+                        class="py-1 text-gray-700 text-gray-300"
+                        aria-labelledby="dropdown"
+                        >
+                        <li>
+                            <button
+                            onClick={handleLogout}
+                            class="w-full text-start py-2 px-4 text-sm hover:bg-gray-600 hover:rounded-xl text-white"
+                            >Sign out</button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

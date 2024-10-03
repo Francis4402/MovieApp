@@ -10,7 +10,6 @@ import { useUser } from "@/app/context/user";
 import { useRouter } from "next/navigation";
 import TextInput from "@/app/Components/TextInput";
 import { BiLoaderCircle } from "react-icons/bi";
-import toast from "react-hot-toast";
 
 
 export default function Login() {
@@ -68,12 +67,10 @@ export default function Login() {
             await contextUser.login(email, password)
             setLoading(false)
             setIsLoginOpen(false)
-            toast.success('Login Success')
             router.push('/')
         } catch (error) {
             console.log(error)
             setLoading(false)
-            toast.error('Login Failed')
         }
     }
 
