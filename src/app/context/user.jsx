@@ -17,13 +17,13 @@ const UserProvider = ({ children }) => {
 
     const checkUser = async () => {
         try {
-            const currentSession = await account.getSession("current");
+            const currentSession = await account.get();
 
             if (!currentSession) return
 
             const promise = await account.get()
             const profile = await UseGetProfileByUserId(promise?.$id)
-            setUser({id: promise?.$id, name: profile?.name, image: profile?.image})
+            setUser({id: promise?.$id, name: profile?.name, image: profile?.image, email: profile?.email})
         } catch (error) {
             setUser(null);
         }
@@ -37,7 +37,7 @@ const UserProvider = ({ children }) => {
             
             await account.createEmailPasswordSession(email, password);
 
-            await UseCreateProfile(promise?.$id, name, process.env.NEXT_PUBLIC_PLACEHOLDER_DEFAULT_IMAGE_ID);
+            await UseCreateProfile(promise?.$id, name, process.env.NEXT_PUBLIC_PLACEHOLDER_DEFAULT_IMAGE_ID, email);
 
             await checkUser();
 

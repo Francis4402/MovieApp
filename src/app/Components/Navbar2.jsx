@@ -59,7 +59,7 @@ const Navbar2 = () => {
 
   return (
     <nav className="border-gray-200 bg-gray-900">
-      <div className="lg:max-w-screen-xl container flex flex-wrap items-center justify-between mx-auto py-5">
+      <div className="lg:max-w-screen-xl container md:px-0 px-5 flex flex-wrap items-center justify-between mx-auto py-5">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Movie App</span>
         </Link>
@@ -85,16 +85,16 @@ const Navbar2 = () => {
               </button>
 
               <div
-                className={`z-50 absolute right-0 mt-2 text-base list-none divide-y rounded-lg shadow bg-gray-700 divide-gray-600 transition-all duration-200 ${
+                className={`z-50 w-32 absolute right-0 mt-2 text-base list-none divide-y rounded-lg shadow bg-gray-700 divide-gray-600 transition-all duration-200 ${
                   isDropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
                 }`}
               >
                 <div className="px-4 py-3">
-                  <span className="block text-sm text-white">{contextUser?.user?.labels}</span>
+                  <span className="block text-sm text-white">{contextUser?.user?.name}</span>
                 </div>
                 <ul className="py-2">
                   <li>
-                    <a href="#" className="block px-4 py-2 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Dashboard</a>
+                    <Link href="/dashboard" className="block px-4 py-2 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Dashboard</Link>
                   </li>
                   <li>
                     <a href="#" className="block px-4 py-2 text-sm  hover:bg-gray-600 text-gray-200 hover:text-white">Profile</a>

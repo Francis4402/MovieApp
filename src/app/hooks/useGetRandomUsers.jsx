@@ -18,6 +18,7 @@ const UseGetRandomUsers = async() => {
             id: profile?.user_id,
             name: profile?.name,
             image: profile?.image,
+            email: profile?.email,
         }
     })
 

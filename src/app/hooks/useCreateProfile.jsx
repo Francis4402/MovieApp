@@ -1,8 +1,6 @@
 import { database, ID } from "../libs/AppWriteClient"
 
-
-
-const UseCreateProfile = async (userId, name, image) => {
+const UseCreateProfile = async (userId, name, image, email) => {
   try {
     await database.createDocument(
         process.env.NEXT_PUBLIC_DATABASE_ID,
@@ -12,6 +10,7 @@ const UseCreateProfile = async (userId, name, image) => {
             user_id: userId,
             name: name,
             image: image,
+            email: email,
         }
     )
   } catch (error) {
