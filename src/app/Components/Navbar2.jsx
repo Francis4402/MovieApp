@@ -135,6 +135,8 @@ const Navbar2 = () => {
             </li>
           </ul>
         </div>
+
+        <Sidebar drawer-right={'drawer-right'} />
       </div>
 
       <div ref={moviesMenuRef}>
@@ -145,7 +147,7 @@ const Navbar2 = () => {
         <TVShowsMenu isOpen={isTVShowsMenuOpen} />
       </div>
 
-      <Sidebar drawer-right={'drawer-right'} />
+      
     </nav>
   )
 }

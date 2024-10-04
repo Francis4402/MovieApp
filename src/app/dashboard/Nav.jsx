@@ -105,13 +105,13 @@ const Nav = () => {
                     </div>
 
                     <ul
-                        class="py-1 text-gray-700 text-gray-300"
+                        className="py-1 text-gray-300"
                         aria-labelledby="dropdown"
                         >
                         <li>
                             <button
                             onClick={handleLogout}
-                            class="w-full text-start py-2 px-4 text-sm hover:bg-gray-600 hover:rounded-xl text-white"
+                            className="w-full text-start py-2 px-4 text-sm hover:bg-gray-600 hover:rounded-xl text-white"
                             >Sign out</button>
                         </li>
                     </ul>
